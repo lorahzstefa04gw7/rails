@@ -60,3 +60,13 @@
 #  - :lazily - Skip automatic analysis; analyze on-demand
 #++
 # Rails.application.config.active_storage.analyze = :immediately
+
+###
+# Use improved inheritance column exclusion behavior for STI models.
+#
+# When false (new 8.2 default), single-table inheritance models only exclude the inheritance column
+# when include_root_in_json is true, allowing the type to be visible in API responses by default.
+#
+# When true (pre-8.2 default), the inheritance column is always excluded from serializable_hash.
+#++
+# Rails.application.config.active_record.exclude_inheritance_column_from_serializable_hash = false
